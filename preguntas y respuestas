@@ -1,0 +1,76 @@
+// NO CORREGIR, NO ESTA TERMINADO Y NO FUNCONA
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int punto, error;
+char rta, corte, menu;
+const char  respuesta[20];
+const char resultado = "electron";
+
+/*void rtaString()
+{
+cin >> respuesta;
+
+if (strcmp(resultado, respuesta) == 0)
+{
+cout << "rta correcta suma 5" << endl;
+punto + 5;
+}
+else
+{
+while (punto != 0)
+{
+cout << "rta incorrecta resta 5" << endl;
+punto - 5;
+error++
+}
+if (punto == 0)
+{
+cout << "rta incorrecta" << endl;
+error++;
+}
+}
+}*/
+
+int main()
+{
+	cout << "bienvenido" << endl;
+	system("pause");
+	
+	while (corte != 'y' && punto != 3)
+	{
+		cout << "elija categoria\n A_ biologia B_fisica C_electricidad D_";
+
+		switch (menu)
+		
+		case 'A':
+			cout << "¿nombre la particula que conforma la corriente electrica? " << endl;
+			cin >> respuesta;
+			
+			while (strcmp(resultado, respuesta) == 0)
+			{
+				cout << "rta correcta suma 5" << endl;
+				punto + 5;
+			}
+			
+			while (punto != 0)
+			{
+				cout << "rta incorrecta resta 5" << endl;
+				punto - 5;
+				error++;
+			}
+			if (punto == 0)
+			{
+				cout << "rta incorrecta" << endl;
+				error++;
+			}
+			break;
+			
+		default:
+			cout << "prueba";
+
+		}
+	}
+}
