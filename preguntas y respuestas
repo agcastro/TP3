@@ -1,76 +1,129 @@
-// NO CORREGIR, NO ESTA TERMINADO Y NO FUNCONA
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-int punto, error;
-char rta, corte, menu;
-const char  respuesta[20];
-const char resultado = "electron";
+int punto;
+char corte, menu;
+char  respuesta[50];
 
-/*void rtaString()
+void rtas(char resultado [])
 {
-cin >> respuesta;
-
-if (strcmp(resultado, respuesta) == 0)
-{
-cout << "rta correcta suma 5" << endl;
-punto + 5;
-}
-else
-{
-while (punto != 0)
-{
-cout << "rta incorrecta resta 5" << endl;
-punto - 5;
-error++
-}
-if (punto == 0)
-{
-cout << "rta incorrecta" << endl;
-error++;
-}
-}
-}*/
-
-int main()
-{
-	cout << "bienvenido" << endl;
-	system("pause");
-	
-	while (corte != 'y' && punto != 3)
+	if (strcmp(resultado, respuesta) == 0)
 	{
-		cout << "elija categoria\n A_ biologia B_fisica C_electricidad D_";
+		cout << "rta correcta suma 5" << endl;
+		punto = punto + 5;
+	}
 
-		switch (menu)
-		
-		case 'A':
-			cout << "¿nombre la particula que conforma la corriente electrica? " << endl;
-			cin >> respuesta;
-			
-			while (strcmp(resultado, respuesta) == 0)
-			{
-				cout << "rta correcta suma 5" << endl;
-				punto + 5;
-			}
-			
-			while (punto != 0)
-			{
-				cout << "rta incorrecta resta 5" << endl;
-				punto - 5;
-				error++;
-			}
-			if (punto == 0)
-			{
-				cout << "rta incorrecta" << endl;
-				error++;
-			}
-			break;
-			
-		default:
-			cout << "prueba";
-
+	else
+	{
+		if (punto == 0)
+		{
+			cout << "rta incorrecta" << endl;
+			error++;
+		}
+		else
+		{
+			cout << "rta incorrecta resta 5" << endl;
+			punto = punto - 5;
+			error++;
 		}
 	}
 }
+
+
+int main()
+{
+	system("color 1A");
+	system("color 2A");
+	system("color 4A");
+	system("color 3A");
+	system("color 5A");
+	cout << "BIENVENIDO AL JUEGO DE PREGUNTAS Y RESPUESTAS\n LAS RESPUESTAS DEBEN ESTAR EN MINUSCULA\n POR CADA RESPUESTA CORRECTA RECIBIRAN 5 PUNTOS\n Y POR CADA RESPUESTA INCORRECTA SE RESTARAN 5\n\nEMPEZEMOS\n" << endl;
+	system("pause");
+
+	while (corte != 'y')
+	{
+		
+		cout << "ELIJA LA CATEGORIA\nA_ ELECTRICIDAD B_FISICA C_SISTEMAS Y ORGANIZACIONES" << endl;
+		cin >> menu;
+
+		switch (menu)
+		{
+
+		case 'a' :
+			cout << "\n¿nombre la particula que conforma la corriente electrica? " << endl;
+			cin >> respuesta;
+
+			rtas("electron");
+
+			cout << "\nindique la ley general de la energia electrica" << endl;
+			cin >> respuesta;
+
+			rtas("ohm");
+
+			cout << "\nSi queremos medir la intensidad que pasa por un circuito,\n¿conectaremos el amperimetro en...?" << endl;
+			cin >> respuesta;
+
+			rtas("serie");
+
+			cout << "\nLa conductividad es la inversa de la ?" << endl;
+			cin >> respuesta;
+
+			rtas("resistividad");
+
+
+			break;
+
+		case 'b':
+
+			cout << "\ncuando un cuerpo cae libremente solo la fuerza de atraccion gravitacional actua sobre el?\n v para verdadero f para falso" << endl;
+			cin >> respuesta;
+
+			rtas("v");
+
+			cout << "\nla velocidad que alcanza un cuerpo en caída libre solo depende de la aceleración de la gravedad\n v para verdadero f para falso" << endl;
+			cin >> respuesta;
+
+			rtas("v");
+
+			cout << "\nla velocidad final de un cuerpo que cae libremente es cero\n v para verdadero f para falso" << endl;
+			cin >> respuesta;
+
+			rtas("f");
+
+			cout << "\nindique la velocidad de la luz redondeado y expresado en m/s" << endl;
+			cin >> respuesta;
+
+			rtas("300000000");
+
+			break;
+		case 'c':
+
+			cout << "\nLa homeostasis es directamente proporcional a la entropía\n v para verdadero f para falso" << endl;
+			cin >> respuesta;
+
+			rtas("f");
+
+			cout << "\nEn el enfoque sistemico, NO hay respuestas absolutas\n v para verdadero f para falso" << endl;
+			cin >> respuesta;
+
+			rtas("v");
+
+			cout << "\ntermino que refiere al logro de un objetivo con la menor cantidad de recursos" << endl;
+			cin >> respuesta;
+
+			rtas("eficiencia");
+
+			cout << "\ntermino que aplica a la resolucion de un determinado objetivo por diferentes caminos " << endl;
+			cin >> respuesta;
+			rtas("equifinalidad");
+
+			break;
+		}
+		cout << "\npuntos acumulados " << punto << " errores acumulados " << error << endl;
+		cout << "\ndesea terminar el juego? Y/N" << endl;
+		cin >> corte;
+	}
+}
+
