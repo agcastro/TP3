@@ -1,15 +1,20 @@
+//andres Guillermo Castro
+//k1051
+// TP3: Preguntas y respuestas 
+// 2/05/2015
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-int punto;
+int punto,error;
 char corte, menu;
 char  respuesta[50];
 
-void rtas(char resultado [])
+void rtas(char resultado[])
 {
-	if (strcmp(resultado, respuesta) == 0)
+	if (strcmp(resultado, respuesta) == 0)// funcion que compra dos strings e indica si son iguales 0 y si no 1 
 	{
 		cout << "rta correcta suma 5" << endl;
 		punto = punto + 5;
@@ -21,6 +26,7 @@ void rtas(char resultado [])
 		{
 			cout << "rta incorrecta" << endl;
 			error++;
+			
 		}
 		else
 		{
@@ -39,25 +45,25 @@ int main()
 	system("color 4A");
 	system("color 3A");
 	system("color 5A");
-	cout << "BIENVENIDO AL JUEGO DE PREGUNTAS Y RESPUESTAS\n LAS RESPUESTAS DEBEN ESTAR EN MINUSCULA\n POR CADA RESPUESTA CORRECTA RECIBIRAN 5 PUNTOS\n Y POR CADA RESPUESTA INCORRECTA SE RESTARAN 5\n\nEMPEZEMOS\n" << endl;
+	cout << "BIENVENIDO AL JUEGO DE PREGUNTAS Y RESPUESTAS\n LAS RESPUESTAS DEBEN ESTAR EN MINUSCULA\n POR CADA RESPUESTA CORRECTA RECIBIRAN 5 PUNTOS\n Y POR CADA RESPUESTA INCORRECTA SE RESTARAN 5\n" << endl;
 	system("pause");
-
+	cout << "\nEMPEZEMOS\n" << endl;
 	while (corte != 'y')
 	{
-		
-		cout << "ELIJA LA CATEGORIA\nA_ ELECTRICIDAD B_FISICA C_SISTEMAS Y ORGANIZACIONES" << endl;
+
+		cout << "ELIJA LA CATEGORIA:\n\na_ ELECTRICIDAD b_FISICA c_SISTEMAS Y ORGANIZACIONES" << endl;
 		cin >> menu;
 
 		switch (menu)
 		{
 
-		case 'a' :
-			cout << "\n¿nombre la particula que conforma la corriente electrica? " << endl;
+		case 'a':
+			cout << "\n¿Nombre la particula que conforma la corriente electrica? " << endl;
 			cin >> respuesta;
 
 			rtas("electron");
 
-			cout << "\nindique la ley general de la energia electrica" << endl;
+			cout << "\nIndique la ley general de la energia electrica" << endl;
 			cin >> respuesta;
 
 			rtas("ohm");
@@ -77,22 +83,22 @@ int main()
 
 		case 'b':
 
-			cout << "\ncuando un cuerpo cae libremente solo la fuerza de atraccion gravitacional actua sobre el?\n v para verdadero f para falso" << endl;
+			cout << "\nCuando un cuerpo cae libremente solo la fuerza de atraccion gravitacional actua sobre el?\n v para verdadero f para falso" << endl;
 			cin >> respuesta;
 
 			rtas("v");
 
-			cout << "\nla velocidad que alcanza un cuerpo en caída libre solo depende de la aceleración de la gravedad\n v para verdadero f para falso" << endl;
+			cout << "\nLa velocidad que alcanza un cuerpo en caida libre solo depende de la aceleracion de la gravedad\n v para verdadero f para falso" << endl;
 			cin >> respuesta;
 
 			rtas("v");
 
-			cout << "\nla velocidad final de un cuerpo que cae libremente es cero\n v para verdadero f para falso" << endl;
+			cout << "\nLa velocidad final de un cuerpo que cae libremente es cero\n v para verdadero f para falso" << endl;
 			cin >> respuesta;
 
 			rtas("f");
 
-			cout << "\nindique la velocidad de la luz redondeado y expresado en m/s" << endl;
+			cout << "\nIndique la velocidad de la luz redondeado y expresado en m/s" << endl;
 			cin >> respuesta;
 
 			rtas("300000000");
@@ -110,20 +116,19 @@ int main()
 
 			rtas("v");
 
-			cout << "\ntermino que refiere al logro de un objetivo con la menor cantidad de recursos" << endl;
+			cout << "\nTermino que refiere al logro de un objetivo con la menor cantidad de recursos" << endl;
 			cin >> respuesta;
 
 			rtas("eficiencia");
 
-			cout << "\ntermino que aplica a la resolucion de un determinado objetivo por diferentes caminos " << endl;
+			cout << "\nTermino que aplica a la resolucion de un determinado objetivo por diferentes caminos " << endl;
 			cin >> respuesta;
 			rtas("equifinalidad");
 
 			break;
 		}
-		cout << "\npuntos acumulados " << punto << " errores acumulados " << error << endl;
-		cout << "\ndesea terminar el juego? Y/N" << endl;
+		cout << "\nPuntos acumulados " << punto << " Errores acumulados " << error << endl;
+		cout << "\nDesea terminar el juego? y/n" << endl;
 		cin >> corte;
 	}
 }
-
